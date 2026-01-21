@@ -80,7 +80,7 @@ function App() {
   const toggleDarkMode = () => setDarkMode(!darkMode);
 
   return (
-    <div className="bg-slate-200 dark:bg-slate-950 min-h-screen flex items-center justify-center font-sans">
+    <div className="bg-slate-200 dark:bg-slate-950 min-h-screen font-sans text-slate-900 dark:text-white">
       <Layout>
         <Header toggleTheme={toggleDarkMode} username={username} setUsername={setUsername} />
         <FlowStateCard
