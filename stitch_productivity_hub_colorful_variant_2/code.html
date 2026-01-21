@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Updated Greeting and Crimson Font Hub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;family=Crimson+Pro:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#F97316",
+                        "background-light": "#FFF9F9",
+                        "background-dark": "#0B0F1A",
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                        crimson: ["Crimson Pro", "serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "1.5rem",
+                        "ios": "3.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer utilities {
+            .material-symbols-rounded {
+                font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            }
+            .ios-container {
+                max-width: 414px;
+                height: 896px;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+            }
+            .mesh-gradient {
+                background: 
+                    radial-gradient(circle at 10% 10%, rgba(255, 182, 193, 0.4) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 10%, rgba(209, 250, 229, 0.4) 0%, transparent 40%),
+                    radial-gradient(circle at 50% 50%, rgba(237, 233, 254, 0.5) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 90%, rgba(196, 181, 253, 0.4) 0%, transparent 50%),
+                    radial-gradient(circle at 20% 80%, rgba(254, 215, 170, 0.3) 0%, transparent 40%),
+                    #FFF9F9;
+            }
+            .dark .mesh-gradient {
+                background: 
+                    radial-gradient(circle at 10% 10%, rgba(88, 28, 135, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 90% 10%, rgba(6, 78, 59, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 90%, rgba(131, 24, 67, 0.2) 0%, transparent 50%),
+                    #0B0F1A;
+            }
+            .glass-card {
+                background: rgba(255, 255, 255, 0.4);
+                backdrop-filter: blur(25px);
+                -webkit-backdrop-filter: blur(25px);
+                border: 1px solid rgba(255, 255, 255, 0.4);
+            }
+            .dark .glass-card {
+                background: rgba(15, 23, 42, 0.4);
+                border: 1px solid rgba(255, 255, 255, 0.08);
+            }
+            .glow-border-wrapper {
+                position: relative;
+                padding: 1.5px;
+                border-radius: 1.85rem;
+                background: linear-gradient(135deg, rgba(255, 182, 193, 0.6), rgba(209, 250, 229, 0.6), rgba(196, 181, 253, 0.6));
+                box-shadow: 0 0 50px rgba(255, 182, 193, 0.25), 
+                            0 0 70px rgba(209, 250, 229, 0.15), 
+                            0 0 50px rgba(196, 181, 253, 0.25);
+            }
+            .dark .glow-border-wrapper {
+                background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(16, 185, 129, 0.3), rgba(249, 115, 22, 0.3));
+                box-shadow: 0 0 60px rgba(0, 0, 0, 0.6);
+            }
+            .flow-text {
+                font-family: 'Playfair Display', serif;
+                font-style: italic;
+                color: #F97316;
+                font-weight: 700;
+            }
+            .floating-shape {
+                position: absolute;
+                filter: blur(60px);
+                z-index: 0;
+                opacity: 0.6;
+            }
+            .sunset-progress {
+                background: linear-gradient(180deg, #F97316 0%, #DC2626 100%);
+                box-shadow: 0 0 20px rgba(249, 115, 22, 0.5), inset 0 0 15px rgba(255, 255, 255, 0.3);
+                position: relative;
+                overflow: hidden;
+            }
+            .sunset-progress::after {
+                content: '';
+                position: absolute;
+                bottom: -20%;
+                left: 0;
+                right: 0;
+                height: 40%;
+                background: rgba(0, 0, 0, 0.1);
+                filter: blur(4px);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-slate-200 dark:bg-slate-950 font-sans flex items-center justify-center min-h-screen p-4">
+<div class="ios-container mesh-gradient shadow-[0_50px_100px_-20px_rgba(0,0,0,0.3)] rounded-ios flex flex-col border-[8px] border-white/90 dark:border-slate-800/90">
+<div class="floating-shape top-[5%] -left-[10%] w-56 h-56 bg-pink-200/40 dark:bg-pink-900/10 rounded-full"></div>
+<div class="floating-shape top-[35%] -right-[15%] w-72 h-72 bg-emerald-100/40 dark:bg-emerald-900/10 rounded-full"></div>
+<div class="floating-shape bottom-[15%] left-[10%] w-48 h-48 bg-violet-200/40 dark:bg-violet-900/10 rounded-full"></div>
+<div class="relative z-20 flex justify-between items-center px-10 pt-8 pb-2 text-slate-800 dark:text-slate-200 font-semibold text-sm">
+<span>9:41</span>
+<div class="flex items-center space-x-2">
+<span class="material-symbols-rounded text-lg">signal_cellular_4_bar</span>
+<span class="material-symbols-rounded text-lg">wifi</span>
+<span class="material-symbols-rounded text-lg">battery_full</span>
+</div>
+</div>
+<div class="relative z-20 px-10 pt-8 pb-4 flex justify-between items-end">
+<div class="max-w-[70%]">
+<p class="text-slate-500 dark:text-slate-400 font-medium tracking-wide text-xs uppercase mb-1">Session Hub</p>
+<h1 class="font-display text-4xl text-slate-900 dark:text-white leading-tight whitespace-nowrap">Hello User</h1>
+</div>
+<div class="relative w-16 h-16 flex items-center justify-center flex-shrink-0">
+<div class="w-full h-full rounded-full sunset-progress flex items-center justify-center p-0.5">
+<div class="w-full h-full rounded-full bg-gradient-to-t from-red-600/20 to-transparent flex items-center justify-center">
+<span class="text-[10px] font-black text-white drop-shadow-md">75%</span>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-20 px-6 py-4">
+<div class="glow-border-wrapper">
+<div class="glass-card rounded-[1.75rem] p-8 relative overflow-hidden">
+<div class="relative z-10">
+<span class="inline-block px-4 py-1.5 bg-orange-100/50 dark:bg-orange-500/20 text-orange-700 dark:text-orange-300 rounded-full text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+                            Deep Work Mode
+                        </span>
+<h2 class="font-display text-3xl leading-tight text-slate-900 dark:text-white mb-6">
+                            Ready to enter<br/>your <span class="flow-text">flow state</span>?
+                        </h2>
+<div class="flex items-center text-slate-600 dark:text-slate-400 text-sm mb-6 font-medium">
+<span class="material-symbols-rounded text-orange-500 mr-2 text-xl">auto_awesome</span>
+                            Recommended: 45 mins
+                        </div>
+<button class="w-full bg-gradient-to-r from-orange-600 to-red-500 text-white py-4 rounded-2xl flex items-center justify-center font-crimson font-bold text-lg shadow-lg shadow-orange-500/30 hover:scale-[1.02] transition-transform active:scale-95">
+<span class="material-symbols-rounded mr-2 fill-current">play_arrow</span>
+                            Get into Flow
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-20 px-8 mt-4">
+<div class="flex justify-between items-center mb-4">
+<h3 class="font-display text-2xl text-slate-900 dark:text-white">Today's Focus</h3>
+<button class="text-[10px] font-bold text-orange-600 dark:text-orange-400 tracking-widest uppercase bg-white/50 dark:bg-orange-500/10 px-3 py-1 rounded-full border border-orange-100 dark:border-orange-500/20">Details</button>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glow-border-wrapper">
+<div class="glass-card p-5 rounded-[1.75rem] h-full flex flex-col justify-between">
+<div class="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center mb-4 border border-emerald-500/20">
+<span class="material-symbols-rounded text-emerald-600 dark:text-emerald-400 text-xl">timer</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-500 dark:text-emerald-400/60 uppercase tracking-widest mb-1">Minutes</p>
+<p class="text-3xl font-bold text-slate-800 dark:text-emerald-50">128</p>
+</div>
+</div>
+</div>
+<div class="glow-border-wrapper">
+<div class="glass-card p-5 rounded-[1.75rem] h-full flex flex-col justify-between">
+<div class="w-10 h-10 bg-pink-500/10 rounded-xl flex items-center justify-center mb-4 border border-pink-500/20">
+<span class="material-symbols-rounded text-pink-600 dark:text-pink-400 text-xl">bolt</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-500 dark:text-pink-400/60 uppercase tracking-widest mb-1">Sessions</p>
+<p class="text-3xl font-bold text-slate-800 dark:text-pink-50">4</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="relative z-20 px-8 mt-6 mb-24">
+<h3 class="font-display text-2xl text-slate-900 dark:text-white mb-4">Learning Path</h3>
+<div class="glow-border-wrapper">
+<div class="glass-card rounded-[1.75rem] p-4 flex items-center space-x-4">
+<div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-violet-500/20 to-pink-500/20 dark:from-indigo-400/20 dark:to-orange-400/20 flex items-center justify-center flex-shrink-0 border border-white/20">
+<span class="material-symbols-rounded text-orange-500 text-3xl">school</span>
+</div>
+<div class="flex-grow">
+<h4 class="font-semibold text-slate-800 dark:text-slate-200">Creative Mastery</h4>
+<p class="text-[11px] font-medium text-slate-500 dark:text-slate-400">8 of 12 lessons completed</p>
+</div>
+<div class="pr-2">
+<span class="material-symbols-rounded text-slate-400">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 w-full glass-card border-none rounded-t-[3rem] px-10 pt-6 pb-10 shadow-[0_-15px_40px_rgba(0,0,0,0.08)] z-30">
+<div class="flex justify-between items-center">
+<div class="flex flex-col items-center space-y-1">
+<div class="bg-orange-500/10 p-2 rounded-xl mb-1">
+<span class="material-symbols-rounded text-orange-600 dark:text-orange-400 text-2xl">grid_view</span>
+</div>
+<span class="text-[9px] font-bold text-orange-600 dark:text-orange-400 tracking-widest uppercase">Hub</span>
+</div>
+<div class="flex flex-col items-center space-y-1 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-rounded text-slate-800 dark:text-white text-2xl">auto_graph</span>
+<span class="text-[9px] font-bold text-slate-800 dark:text-white tracking-widest uppercase">Insights</span>
+</div>
+<div class="flex flex-col items-center space-y-1 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-rounded text-slate-800 dark:text-white text-2xl">explore</span>
+<span class="text-[9px] font-bold text-slate-800 dark:text-white tracking-widest uppercase">Explore</span>
+</div>
+<div class="flex flex-col items-center space-y-1 opacity-40 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-rounded text-slate-800 dark:text-white text-2xl">person</span>
+<span class="text-[9px] font-bold text-slate-800 dark:text-white tracking-widest uppercase">Profile</span>
+</div>
+</div>
+<div class="w-32 h-1.5 bg-slate-400/20 dark:bg-slate-500/20 rounded-full mx-auto mt-8"></div>
+</div>
+</div>
+<button class="fixed bottom-6 right-6 glass-card p-4 rounded-full shadow-2xl border border-white/40 dark:border-slate-700/40 z-50 hover:scale-110 active:scale-90 transition-all" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-symbols-rounded block dark:hidden text-orange-500">light_mode</span>
+<span class="material-symbols-rounded hidden dark:block text-yellow-400">dark_mode</span>
+</button>
+
+</body></html>
